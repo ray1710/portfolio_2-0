@@ -1,16 +1,54 @@
-#mainpage{
-    border: 1px solid red;
+/* Ensure both pages cover the entire viewport and are positioned absolutely */
+#whitemainpage, #blackmainpage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100vh;
-    align-content: center;
+}
+
+/* Set the z-index to control stacking order */
+#whitemainpage {
+    border: 1px solid red;
+    z-index: 1; /* Lower z-index value */
+    background-color: white;
     text-align: center;
 }
 
-#title
-{
+#blackmainpage {
     border: 1px solid red;
-    margin-top: 125px;
-    font-size: 20px;
+    z-index: 2; /* Higher z-index value */
+    background-color: black;
+    text-align: center;
 }
+
+#blackpicture
+{
+    position: static;
+    margin-top: 250px;
+}
+#whitepicture
+{
+    position: static;
+    margin-top: 250px;
+}
+
+
+
+#whitetitle {
+    border: 1px solid red;
+    margin-top: 150px;
+    font-size: 20px;
+    color: black;
+}
+
+#blacktitle {
+    border: 1px solid red;
+    margin-top: 150px;
+    font-size: 20px;
+    color: white;
+}
+
 .showtext {
     opacity: 1;
     transition: all 1s ease;
@@ -19,4 +57,4 @@
 .hidetext {
     opacity: 0;
     transition: all 1s ease;
-} 
+}

@@ -15,11 +15,11 @@ function changeFont()
         
     }
 
-    document.getElementById("title").setAttribute("class", "hidetext");
+    document.getElementById("whitetitle").setAttribute("class", "hidetext");
 
     setTimeout(() => {
-        document.getElementById("title").style.fontFamily=fonts[current];
-        document.getElementById("title").setAttribute("class", "showtext");
+        document.getElementById("whitetitle").style.fontFamily=fonts[current];
+        document.getElementById("whitetitle").setAttribute("class", "showtext");
     }, 1000)
 
 
