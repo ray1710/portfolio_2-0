@@ -1,9 +1,10 @@
 //Changing the text of title
 const fonts = ["Arial", "Georgia", "Courier New", "Verdana", "Tahoma"];
 current=0;
-let slider=document.getElementById("line")
-document.getElementById("line").addEventListener("click", slide);
 
+
+
+//changes font for the title
 function changeFont()
 {
     while(true)
@@ -36,20 +37,40 @@ function changeFont()
 
 
 }
-function slide()
-{
-    isHolding=true
-    while(isHolding)
-    {
-        console.log("hi")
+//eventlistener for line
+let isHolding = false;
+let offset = 0;
 
+window.addEventListener("DOMContentLoaded", (event) => {
+    const slider = document.getElementById('line');
+    if (slider) {
+        slider.addEventListener('mousedown', startSliding);
+        document.addEventListener('mouseup', stopSliding);
+        document.addEventListener('mousemove', slide);
+        }
+    });
+
+    function startSliding(e) {
+        isHolding = true;
     }
-}
 
-function notHolding()
-{
-    isHolding=false
-}
+    function stopSliding() {
+        isHolding = false;
+    }
+
+    function slide(e) {
+        if (!isHolding) return;
+
+        const slider = document.getElementById('line');
+        let x = e.clientX;
+
+        // Ensure the slider stays within the bounds of the viewport
+        if (x < 0) x = 0;
+        if (x > window.innerWidth - slider.offsetWidth) x = window.innerWidth - slider.offsetWidth;
+
+        slider.style.left = x + 'px';
+    }
+        
 
 
 
