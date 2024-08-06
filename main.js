@@ -69,6 +69,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
         if (x > window.innerWidth - slider.offsetWidth) x = window.innerWidth - slider.offsetWidth;
 
         slider.style.left = x + 'px';
+        const rect = document.getElementById('line').getBoundingClientRect();
+        console.log(rect.top, rect.right, rect.bottom, rect.left);    
+        document.getElementById('blackmainpage').style.width=`${rect.right}px`
     }
         
 
